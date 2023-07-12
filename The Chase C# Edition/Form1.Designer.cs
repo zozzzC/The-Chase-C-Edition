@@ -275,12 +275,13 @@
             // 
             // label2
             // 
+            label2.AutoSize = true;
             label2.BackColor = Color.FromArgb(207, 63, 63);
             label2.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.FromArgb(255, 224, 92);
             label2.Location = new Point(130, 724);
             label2.Name = "label2";
-            label2.Size = new Size(196, 63);
+            label2.Size = new Size(51, 25);
             label2.TabIndex = 52;
             label2.Text = "TIME";
             label2.TextAlign = ContentAlignment.MiddleCenter;

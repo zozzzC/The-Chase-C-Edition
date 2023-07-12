@@ -153,63 +153,81 @@ namespace The_Chase_C__Edition
 
         private void QuestionNavigation(string type)
         {
-            try
+
+            if (csvImported == true)
             {
-                if (type == "Prev") //if we're going backwards we need to also go backwards in the questions. this part is a bit more complicated.
+
+                try
                 {
-                    //check if timer = 0, if it is then we shouldnt be allowed to keep going (preventative measure.) 
 
-                    if (timeUp == false)
+                    if (type == "Prev") //if we're going backwards we need to also go backwards in the questions. this part is a bit more complicated.
                     {
+                        //check if timer = 0, if it is then we shouldnt be allowed to keep going (preventative measure.) 
 
-                        //first, we check if the last value was a question or an answer.
-
-                        if (countOfClick % 2 == 0) //therefore we are in a QUESTION and going back to the LAST question
+                        if (timeUp == false)
                         {
-                            lblDisplayQ.Text = listOfAll.ElementAt((int)questionNumber).Item1;
-                            lblDisplayA.Text = listOfAll.ElementAt((int)questionNumber).Item2;
+
+                            //first, we check if the last value was a question or an answer.
+                            
+                            if (countOfClick % 2 == 0) //therefore we are in an ANSWER and going back to the LAST question
+                            {
+                                //if we're on an answer we need to hide the answer
+                                lblDisplayA.Text = "";
+                            }
+                            else
+                            {
+                                questionNumber--;
+                                lblDisplayQ.Text = listOfAll.ElementAt((int)questionNumber).Item1;
+                                lblDisplayA.Text = listOfAll.ElementAt((int)questionNumber).Item2;
+                            }
+                            countOfClick--;
                         }
                         else
                         {
-                            //if we're on an answer we need to hide the answer
-                            lblDisplayA.Text = "";
-                            questionNumber--;
+                            MessageBox.Show("Time is up. Please reset the timer!");
                         }
-                        countOfClick--;
+
                     }
                     else
                     {
-                        MessageBox.Show("Time is up. Please reset the timer!");
-                    }
-
-                }
-                else
-                {
-                    if (timeUp == false)
-                    {
-
-                        if (countOfClick % 2 == 0) //therefore we are in a QUESTION
+                        if (timeUp == false)
                         {
-                            lblDisplayQ.Text = listOfAll.ElementAt((int)questionNumber).Item1;
-                            lblDisplayA.Text = "";
+
+                            if (countOfClick % 2 == 0) //therefore we are in a QUESTION
+                            {
+                                lblDisplayQ.Text = listOfAll.ElementAt((int)questionNumber).Item1;
+                                lblDisplayA.Text = "";
+                            }
+                            else
+                            {
+                                lblDisplayA.Text = listOfAll.ElementAt((int)questionNumber).Item2;
+                                questionNumber++;
+                            }
+                            countOfClick++;
                         }
                         else
                         {
-                            lblDisplayA.Text = listOfAll.ElementAt((int)questionNumber).Item2;
-                            questionNumber++;
+                            MessageBox.Show("Time is up. Please reset the timer!");
                         }
-                        countOfClick++;
                     }
-                    else
-                    {
-                        MessageBox.Show("Time is up. Please reset the timer!");
-                    }
-                }
-                label2.Text = "Question number : " + questionNumber + "Click count : " + countOfClick;
+                    label2.Text = "Question number : " + questionNumber + "Click count : " + countOfClick;
 
-            }
-            catch (Exception ex) //mostly used if listOfAll is null, so the user probably didnt enter a csv file
-            {
+                }
+                catch (Exception ex) //mostly used if listOfAll is null, so the user probably didnt enter a csv file
+                {
+                    //if we reached the end = index OOB, we need to show this to the user. 
+
+                    if (questionNumber == listOfAll.Count)
+                    {
+                        MessageBox.Show("You have reached the end of the questions.");
+                        questionNumber--;
+
+                    }
+                    MessageBox.Show("Error in showing questions.");
+
+
+                }
+
                 if (countOfClick < 0)
                 {
                     countOfClick = 0;
@@ -221,18 +239,12 @@ namespace The_Chase_C__Edition
                     questionNumber = 0;
                     lblDisplayQ.Text = "";
                 }
-                //if we reached the end = index OOB, we need to show this to the user. 
-
-                if (questionNumber == listOfAll.Count)
-                {
-                    MessageBox.Show("You have reached the end of the questions.");
-                    questionNumber--;
-
-                }
-                MessageBox.Show("Error in showing questions. Did you enter a valid CSV file?");
-
-
             }
+            else
+            {
+                MessageBox.Show("CSV file has not been imported. Please import a CSV file to show the questions.");
+            }
+
 
 
         }
