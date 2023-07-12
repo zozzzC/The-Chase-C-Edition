@@ -18,6 +18,8 @@ The Chase C# Edition\The Chase C# Edition\bin\Debug\net6.0-windows
 ```
 
 Then you should find an application .EXE file:
+
+
 <img width="680" alt="Screenshot 2023-07-12 at 4 36 30 PM" src="https://github.com/zozzzC/The-Chase-C-Edition/assets/104532983/c1a1907a-9cc7-4f65-a372-d314561441d7">
 
 
