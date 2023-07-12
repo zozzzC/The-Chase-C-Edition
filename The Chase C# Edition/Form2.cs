@@ -29,8 +29,6 @@ namespace The_Chase_C__Edition
             ListViewItem items;
 
 
-
-
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 try
@@ -55,6 +53,7 @@ namespace The_Chase_C__Edition
                     }
                     //if all is successful then we can say the csv is imported. 
                     Form1.csvImported = true;
+                    MessageBox.Show("Successful import of CSV file.");
                 }
                 catch (Exception ex)
                 {
@@ -73,6 +72,7 @@ namespace The_Chase_C__Edition
             try
             {
                 Form1.defaultTime = Convert.ToInt32(textBox1.Text);
+                MessageBox.Show("Default time is set to " + textBox1.Text);
             }
             catch (Exception ex)
             {

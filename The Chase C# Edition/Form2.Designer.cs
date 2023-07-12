@@ -142,7 +142,7 @@
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label4.Location = new Point(12, 237);
             label4.Name = "label4";
-            label4.Size = new Size(842, 210);
+            label4.Size = new Size(842, 509);
             label4.TabIndex = 44;
             label4.Text = resources.GetString("label4.Text");
             // 
@@ -150,7 +150,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(866, 581);
+            ClientSize = new Size(867, 755);
             Controls.Add(label4);
             Controls.Add(button8);
             Controls.Add(button7);

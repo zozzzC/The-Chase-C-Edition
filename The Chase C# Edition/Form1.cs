@@ -16,7 +16,7 @@ namespace The_Chase_C__Edition
         int sPts = 0;
         int tPts = 0; //student and teacher pts
         Boolean timeIsPaused = true;
-        int questionNumber = 0; //counts the index of the question we are on. 
+        int questionNumber = -1; //counts the index of the question we are on. (index starts at 0!)s
         int countOfClick = 0; //used to count if we are at the 'answer' part of a question or the 'question' part (for question viewing) odd = question, even = answer
         int countOfBack = 0; //counts how many times we went 'backwards', IE, what to display next.
         public static List<(string, string)> listOfAll = new List<(string, string)>();
@@ -168,19 +168,30 @@ namespace The_Chase_C__Edition
                         {
 
                             //first, we check if the last value was a question or an answer.
-                            
-                            if (countOfClick % 2 == 0) //therefore we are in an ANSWER and going back to the LAST question
+                            if (countOfClick == 0)
                             {
-                                //if we're on an answer we need to hide the answer
+                                questionNumber = 0;
+                                lblDisplayQ.Text = listOfAll.ElementAt(0).Item1;
                                 lblDisplayA.Text = "";
+                                countOfClick = 1;
+
                             }
                             else
                             {
-                                questionNumber--;
-                                lblDisplayQ.Text = listOfAll.ElementAt((int)questionNumber).Item1;
-                                lblDisplayA.Text = listOfAll.ElementAt((int)questionNumber).Item2;
+                                if (countOfClick % 2 == 0) //therefore we are in an ANSWER and going back to the LAST question
+                                {
+                                    //if we're on an answer we need to hide the answer
+                                    lblDisplayA.Text = "";
+                                }
+                                else
+                                {
+                                    questionNumber--;
+                                    lblDisplayQ.Text = listOfAll.ElementAt((int)questionNumber).Item1;
+                                    lblDisplayA.Text = listOfAll.ElementAt((int)questionNumber).Item2;
+                                }
+                                countOfClick--;
                             }
-                            countOfClick--;
+
                         }
                         else
                         {
@@ -195,13 +206,13 @@ namespace The_Chase_C__Edition
 
                             if (countOfClick % 2 == 0) //therefore we are in a QUESTION
                             {
+                                questionNumber++;
                                 lblDisplayQ.Text = listOfAll.ElementAt((int)questionNumber).Item1;
                                 lblDisplayA.Text = "";
                             }
                             else
                             {
                                 lblDisplayA.Text = listOfAll.ElementAt((int)questionNumber).Item2;
-                                questionNumber++;
                             }
                             countOfClick++;
                         }
@@ -210,7 +221,6 @@ namespace The_Chase_C__Edition
                             MessageBox.Show("Time is up. Please reset the timer!");
                         }
                     }
-                    label2.Text = "Question number : " + questionNumber + "Click count : " + countOfClick;
 
                 }
                 catch (Exception ex) //mostly used if listOfAll is null, so the user probably didnt enter a csv file
@@ -223,7 +233,15 @@ namespace The_Chase_C__Edition
                         questionNumber--;
 
                     }
-                    MessageBox.Show("Error in showing questions.");
+                    else if (questionNumber == 0)
+                    {
+
+                        MessageBox.Show("You have reached the end of the questions.");
+                    }
+                    else
+                    {
+                        countOfClick = 0;
+                    }
 
 
                 }
@@ -251,35 +269,44 @@ namespace The_Chase_C__Edition
 
         private void btnTimeStart_Click(object sender, EventArgs e)
         {
-            //check if timer is still going, if yes then disable since we don't want to reset the time yet. 
-            if (timeUp == true)
+            if (csvImported == true)
             {
-                btnTimeStart.Enabled = false;
-                button2.Enabled = true;
-                button1.Enabled = true;
-                if (time == 0)
+
+                //check if timer is still going, if yes then disable since we don't want to reset the time yet. 
+                if (timeUp == true)
                 {
-                    MessageBox.Show("Time is 0. Using default time of " + defaultTime + " seconds...");
-                    time = Convert.ToInt32(defaultTime);
-                    txtBoxTimer.Visible = false;
-                    countdowntime.Interval = 1000;
-                    countdowntime.Start();
-                    timeLeft = time;
+                    btnTimeStart.Enabled = false;
+                    button2.Enabled = true;
+                    button1.Enabled = true;
+                    if (time == 0)
+                    {
+                        MessageBox.Show("Time is 0. Using default time of " + defaultTime + " seconds...");
+                        time = Convert.ToInt32(defaultTime);
+                        txtBoxTimer.Visible = false;
+                        countdowntime.Interval = 1000;
+                        countdowntime.Start();
+                        timeLeft = time;
+                    }
+                    else
+                    {
+                        time = Convert.ToInt32(txtBoxTimer.Text);
+                        txtBoxTimer.Visible = false;
+                        countdowntime.Interval = 1000;
+                        countdowntime.Start();
+                        timeLeft = time;
+                    }
                 }
                 else
                 {
-                    time = Convert.ToInt32(txtBoxTimer.Text);
-                    txtBoxTimer.Visible = false;
-                    countdowntime.Interval = 1000;
-                    countdowntime.Start();
-                    timeLeft = time;
+                    btnTimeStart.Enabled = true;
+                    button2.Enabled = false;
+                    button1.Enabled = false;
                 }
+
             }
             else
             {
-                btnTimeStart.Enabled = true;
-                button2.Enabled = false;
-                button1.Enabled = false;
+                MessageBox.Show("CSV file has not yet been imported. Please import CSV file before continuing!");
             }
 
         }
@@ -287,7 +314,7 @@ namespace The_Chase_C__Edition
         private void countdowntime_Tick(object sender, EventArgs e)
         {
 
-            if (timeLeft > 0)
+            if (timeLeft >= 0)
             {
                 timeLeft = timeLeft - 1;
                 lblTimeCount.Text = time--.ToString();

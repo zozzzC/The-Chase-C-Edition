@@ -48,8 +48,6 @@
             btnTimeStart = new Button();
             button1 = new Button();
             button2 = new Button();
-            label1 = new Label();
-            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -65,49 +63,49 @@
             // 
             // lblStudents
             // 
-            lblStudents.AutoSize = true;
             lblStudents.BackColor = Color.FromArgb(207, 63, 63);
             lblStudents.ForeColor = Color.FromArgb(255, 224, 92);
-            lblStudents.Location = new Point(130, 356);
+            lblStudents.Location = new Point(36, 356);
             lblStudents.Name = "lblStudents";
-            lblStudents.Size = new Size(62, 15);
+            lblStudents.Size = new Size(458, 64);
             lblStudents.TabIndex = 1;
             lblStudents.Text = "STUDENTS";
+            lblStudents.TextAlign = ContentAlignment.TopCenter;
             lblStudents.Click += lblStudents_Click;
             // 
             // lblTeachers
             // 
-            lblTeachers.AutoSize = true;
             lblTeachers.BackColor = Color.FromArgb(207, 63, 63);
             lblTeachers.ForeColor = Color.FromArgb(255, 224, 92);
-            lblTeachers.Location = new Point(962, 356);
+            lblTeachers.Location = new Point(868, 356);
             lblTeachers.Name = "lblTeachers";
-            lblTeachers.Size = new Size(63, 15);
+            lblTeachers.Size = new Size(453, 64);
             lblTeachers.TabIndex = 2;
             lblTeachers.Text = "TEACHERS";
+            lblTeachers.TextAlign = ContentAlignment.TopCenter;
             lblTeachers.Click += lblTeachers_Click;
             // 
             // lblTPts
             // 
-            lblTPts.AutoSize = true;
             lblTPts.BackColor = Color.FromArgb(207, 63, 63);
             lblTPts.ForeColor = Color.FromArgb(255, 224, 92);
-            lblTPts.Location = new Point(962, 448);
+            lblTPts.Location = new Point(868, 448);
             lblTPts.Name = "lblTPts";
-            lblTPts.Size = new Size(63, 15);
+            lblTPts.Size = new Size(453, 55);
             lblTPts.TabIndex = 4;
-            lblTPts.Text = "TEACHERS";
+            lblTPts.Text = "0";
+            lblTPts.TextAlign = ContentAlignment.TopCenter;
             // 
             // lblSPts
             // 
-            lblSPts.AutoSize = true;
             lblSPts.BackColor = Color.FromArgb(207, 63, 63);
             lblSPts.ForeColor = Color.FromArgb(255, 224, 92);
-            lblSPts.Location = new Point(130, 448);
+            lblSPts.Location = new Point(36, 448);
             lblSPts.Name = "lblSPts";
-            lblSPts.Size = new Size(62, 15);
+            lblSPts.Size = new Size(458, 55);
             lblSPts.TabIndex = 3;
-            lblSPts.Text = "STUDENTS";
+            lblSPts.Text = "0";
+            lblSPts.TextAlign = ContentAlignment.TopCenter;
             // 
             // countdowntime
             // 
@@ -161,7 +159,7 @@
             lblTimeCount.BackColor = Color.FromArgb(207, 63, 63);
             lblTimeCount.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             lblTimeCount.ForeColor = Color.FromArgb(255, 224, 92);
-            lblTimeCount.Location = new Point(569, 289);
+            lblTimeCount.Location = new Point(575, 289);
             lblTimeCount.Name = "lblTimeCount";
             lblTimeCount.Size = new Size(167, 59);
             lblTimeCount.TabIndex = 42;
@@ -212,7 +210,7 @@
             lblDisplayQ.Name = "lblDisplayQ";
             lblDisplayQ.Size = new Size(1288, 59);
             lblDisplayQ.TabIndex = 46;
-            lblDisplayQ.Text = "0";
+            lblDisplayQ.Text = "Question";
             lblDisplayQ.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblDisplayA
@@ -224,7 +222,7 @@
             lblDisplayA.Name = "lblDisplayA";
             lblDisplayA.Size = new Size(1288, 59);
             lblDisplayA.TabIndex = 47;
-            lblDisplayA.Text = "0";
+            lblDisplayA.Text = "Answer";
             lblDisplayA.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnTimeStart
@@ -261,38 +259,11 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
-            // label1
-            // 
-            label1.BackColor = Color.FromArgb(207, 63, 63);
-            label1.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = Color.FromArgb(255, 224, 92);
-            label1.Location = new Point(575, 381);
-            label1.Name = "label1";
-            label1.Size = new Size(196, 63);
-            label1.TabIndex = 51;
-            label1.Text = "TIME";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.FromArgb(207, 63, 63);
-            label2.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.ForeColor = Color.FromArgb(255, 224, 92);
-            label2.Location = new Point(130, 724);
-            label2.Name = "label2";
-            label2.Size = new Size(51, 25);
-            label2.TabIndex = 52;
-            label2.Text = "TIME";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1346, 825);
-            Controls.Add(label2);
-            Controls.Add(label1);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(btnTimeStart);
@@ -340,7 +311,5 @@
         private Button btnTimeStart;
         private Button button1;
         private Button button2;
-        private Label label1;
-        private Label label2;
     }
 }
