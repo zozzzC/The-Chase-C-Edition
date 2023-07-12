@@ -17,9 +17,9 @@ Download the file by clicking the green 'code' button. Unzip the file, and then 
 The Chase C# Edition\The Chase C# Edition\bin\Debug\net6.0-windows
 ```
 
-Then you should find an 'application file':
+Then you should find an application .EXE file:
+<img width="680" alt="Screenshot 2023-07-12 at 4 36 30 PM" src="https://github.com/zozzzC/The-Chase-C-Edition/assets/104532983/c1a1907a-9cc7-4f65-a372-d314561441d7">
 
-<img width="680" alt="Screenshot 2023-07-12 at 4 36 30 PM" src="https://github.com/zozzzC/The-Chase-C-Edition/assets/104532983/ed358942-940b-4249-a34e-fa01e6abf04e">
 
 Double click this to run the program.
 
