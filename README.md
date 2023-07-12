@@ -8,11 +8,10 @@ Play 'The Chase' during school assemblies.
 - [x] Timer and points for both teachers and students.
 - [ ] Image in CSV file support.
 - [ ] 'Dun dun dun!!!' theme!
-- [ ] 
 ---
 # Usage
 
-Download the file by clicking the green 'code' button. Unzip the file, and then navigate into the folder file path like so:
+Download the file by clicking the green 'code' button. Unzip the file, and then navigate into the folder file path similar to the following:
 
 ```
 The Chase C# Edition\The Chase C# Edition\bin\Debug\net6.0-windows
