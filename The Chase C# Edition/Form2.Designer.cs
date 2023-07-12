@@ -28,16 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label6 = new Label();
-            comboBox2 = new ComboBox();
-            textBox2 = new TextBox();
-            label5 = new Label();
-            label4 = new Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             button7 = new Button();
             textBox1 = new TextBox();
-            button6 = new Button();
-            button5 = new Button();
-            button4 = new Button();
             button3 = new Button();
             button2 = new Button();
             button1 = new Button();
@@ -46,65 +39,19 @@
             label1 = new Label();
             button8 = new Button();
             openFileDialog1 = new OpenFileDialog();
-            checkBox1 = new CheckBox();
+            label4 = new Label();
             SuspendLayout();
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(5, 242);
-            label6.Name = "label6";
-            label6.Size = new Size(128, 32);
-            label6.TabIndex = 41;
-            label6.Text = "Focus Set:";
-            // 
-            // comboBox2
-            // 
-            comboBox2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(139, 248);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(121, 29);
-            comboBox2.TabIndex = 40;
-            // 
-            // textBox2
-            // 
-            textBox2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(236, 288);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(146, 29);
-            textBox2.TabIndex = 38;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(552, 155);
-            label5.Name = "label5";
-            label5.Size = new Size(83, 32);
-            label5.TabIndex = 34;
-            label5.Text = "Status";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(5, 285);
-            label4.Name = "label4";
-            label4.Size = new Size(225, 32);
-            label4.TabIndex = 32;
-            label4.Text = "Manual Point Edit:";
             // 
             // button7
             // 
             button7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button7.Location = new Point(190, 202);
+            button7.Location = new Point(185, 143);
             button7.Name = "button7";
             button7.Size = new Size(289, 31);
             button7.TabIndex = 31;
             button7.Text = "Set Current Time as Default";
             button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
             // 
             // textBox1
             // 
@@ -113,36 +60,6 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(146, 29);
             textBox1.TabIndex = 30;
-            // 
-            // button6
-            // 
-            button6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button6.Location = new Point(404, 146);
-            button6.Name = "button6";
-            button6.Size = new Size(75, 31);
-            button6.TabIndex = 29;
-            button6.Text = "Reset";
-            button6.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            button5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button5.Location = new Point(295, 145);
-            button5.Name = "button5";
-            button5.Size = new Size(75, 31);
-            button5.TabIndex = 28;
-            button5.Text = "Pause";
-            button5.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            button4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button4.Location = new Point(190, 145);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 31);
-            button4.TabIndex = 27;
-            button4.Text = "Start";
-            button4.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
@@ -207,7 +124,7 @@
             // button8
             // 
             button8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button8.Location = new Point(12, 337);
+            button8.Location = new Point(12, 189);
             button8.Name = "button8";
             button8.RightToLeft = RightToLeft.Yes;
             button8.Size = new Size(165, 31);
@@ -220,34 +137,24 @@
             // 
             openFileDialog1.FileName = "openFileDialog1";
             // 
-            // checkBox1
+            // label4
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(12, 374);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(254, 19);
-            checkBox1.TabIndex = 43;
-            checkBox1.Text = "Auto-next question if plus button is clicked";
-            checkBox1.UseVisualStyleBackColor = true;
-            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+            label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(12, 237);
+            label4.Name = "label4";
+            label4.Size = new Size(842, 210);
+            label4.TabIndex = 44;
+            label4.Text = resources.GetString("label4.Text");
             // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(866, 581);
-            Controls.Add(checkBox1);
-            Controls.Add(button8);
-            Controls.Add(label6);
-            Controls.Add(comboBox2);
-            Controls.Add(textBox2);
-            Controls.Add(label5);
             Controls.Add(label4);
+            Controls.Add(button8);
             Controls.Add(button7);
             Controls.Add(textBox1);
-            Controls.Add(button6);
-            Controls.Add(button5);
-            Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -260,17 +167,8 @@
         }
 
         #endregion
-
-        private Label label6;
-        private ComboBox comboBox2;
-        private TextBox textBox2;
-        private Label label5;
-        private Label label4;
         private Button button7;
         private TextBox textBox1;
-        private Button button6;
-        private Button button5;
-        private Button button4;
         private Button button3;
         private Button button2;
         private Button button1;
@@ -279,6 +177,6 @@
         private Label label1;
         private Button button8;
         private OpenFileDialog openFileDialog1;
-        private CheckBox checkBox1;
+        private Label label4;
     }
 }

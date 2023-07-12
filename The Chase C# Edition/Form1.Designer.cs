@@ -46,7 +46,10 @@
             lblDisplayQ = new Label();
             lblDisplayA = new Label();
             btnTimeStart = new Button();
+            button1 = new Button();
+            button2 = new Button();
             label1 = new Label();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -106,6 +109,10 @@
             lblSPts.TabIndex = 3;
             lblSPts.Text = "STUDENTS";
             // 
+            // countdowntime
+            // 
+            countdowntime.Tick += countdowntime_Tick;
+            // 
             // lblTimer
             // 
             lblTimer.BackColor = Color.FromArgb(207, 63, 63);
@@ -144,7 +151,7 @@
             // 
             // txtBoxTimer
             // 
-            txtBoxTimer.Location = new Point(606, 440);
+            txtBoxTimer.Location = new Point(603, 310);
             txtBoxTimer.Name = "txtBoxTimer";
             txtBoxTimer.Size = new Size(100, 23);
             txtBoxTimer.TabIndex = 41;
@@ -177,10 +184,10 @@
             btnNextQ.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnNextQ.Location = new Point(1246, 740);
             btnNextQ.Name = "btnNextQ";
-            btnNextQ.RightToLeft = RightToLeft.Yes;
+            btnNextQ.RightToLeft = RightToLeft.No;
             btnNextQ.Size = new Size(75, 31);
             btnNextQ.TabIndex = 44;
-            btnNextQ.Text = "-";
+            btnNextQ.Text = "-->";
             btnNextQ.UseVisualStyleBackColor = true;
             btnNextQ.Click += btnNextQ_Click;
             // 
@@ -189,10 +196,10 @@
             btnPrevQ.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnPrevQ.Location = new Point(1147, 740);
             btnPrevQ.Name = "btnPrevQ";
-            btnPrevQ.RightToLeft = RightToLeft.Yes;
+            btnPrevQ.RightToLeft = RightToLeft.No;
             btnPrevQ.Size = new Size(75, 31);
             btnPrevQ.TabIndex = 45;
-            btnPrevQ.Text = "-";
+            btnPrevQ.Text = "<--";
             btnPrevQ.UseVisualStyleBackColor = true;
             btnPrevQ.Click += btnPrevQ_Click;
             // 
@@ -223,30 +230,70 @@
             // btnTimeStart
             // 
             btnTimeStart.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnTimeStart.Location = new Point(1246, 657);
+            btnTimeStart.Location = new Point(1246, 648);
             btnTimeStart.Name = "btnTimeStart";
             btnTimeStart.Size = new Size(75, 31);
             btnTimeStart.TabIndex = 48;
-            btnTimeStart.Text = "+";
+            btnTimeStart.Text = "Start";
             btnTimeStart.UseVisualStyleBackColor = true;
+            btnTimeStart.Click += btnTimeStart_Click;
+            // 
+            // button1
+            // 
+            button1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.Location = new Point(1147, 648);
+            button1.Name = "button1";
+            button1.RightToLeft = RightToLeft.Yes;
+            button1.Size = new Size(75, 31);
+            button1.TabIndex = 49;
+            button1.Text = "Pause";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // button2
+            // 
+            button2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button2.Location = new Point(1051, 648);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 31);
+            button2.TabIndex = 50;
+            button2.Text = "End";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // label1
             // 
-            label1.AutoSize = true;
             label1.BackColor = Color.FromArgb(207, 63, 63);
+            label1.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.FromArgb(255, 224, 92);
-            label1.Location = new Point(193, 756);
+            label1.Location = new Point(575, 381);
             label1.Name = "label1";
-            label1.Size = new Size(63, 15);
-            label1.TabIndex = 49;
-            label1.Text = "TEACHERS";
+            label1.Size = new Size(196, 63);
+            label1.TabIndex = 51;
+            label1.Text = "TIME";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            label2.BackColor = Color.FromArgb(207, 63, 63);
+            label2.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = Color.FromArgb(255, 224, 92);
+            label2.Location = new Point(130, 724);
+            label2.Name = "label2";
+            label2.Size = new Size(196, 63);
+            label2.TabIndex = 52;
+            label2.Text = "TIME";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1346, 825);
+            Controls.Add(label2);
             Controls.Add(label1);
+            Controls.Add(button2);
+            Controls.Add(button1);
             Controls.Add(btnTimeStart);
             Controls.Add(lblDisplayA);
             Controls.Add(lblDisplayQ);
@@ -290,6 +337,9 @@
         private Label lblDisplayQ;
         private Label lblDisplayA;
         private Button btnTimeStart;
+        private Button button1;
+        private Button button2;
         private Label label1;
+        private Label label2;
     }
 }

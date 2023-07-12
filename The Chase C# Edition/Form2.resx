@@ -60,4 +60,11 @@
   <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="label4.Text" xml:space="preserve">
+    <value>How to Change Time: 
+1. Click on the 'Time' text in the 'The Chase' form (the red form.)
+2. A textbox will pop up, right on top of the timer. Enter the time in seconds there.
+3. Click 'Time' text again to confirm the time. The timer should then change. When you click 'start' the timer will begin.
+</value>
+  </data>
 </root>
