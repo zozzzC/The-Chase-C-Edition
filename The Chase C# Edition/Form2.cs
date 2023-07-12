@@ -29,8 +29,6 @@ namespace The_Chase_C__Edition
             ListViewItem items;
 
 
-
-
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 try
@@ -53,6 +51,9 @@ namespace The_Chase_C__Edition
                             items = new ListViewItem(arr);
                         }
                     }
+                    //if all is successful then we can say the csv is imported. 
+                    Form1.csvImported = true;
+                    MessageBox.Show("Successful import of CSV file.");
                 }
                 catch (Exception ex)
                 {
@@ -61,29 +62,25 @@ namespace The_Chase_C__Edition
             }
 
 
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
-                    string path = openFileDialog1.FileName;
-                    //now we use the streamreader to read from the file, which we will then display on the listview.
-
-                    var stream = openFileDialog1.OpenFile();
-                    int totalVotes = 0;
-
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            //as name suggests, if the 'plus' button is clicked AFTER a question is shown then we move onto the next question automatically. by default this is set to FALSE!
 
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            //set current time entered as default
+            try
+            {
+                Form1.defaultTime = Convert.ToInt32(textBox1.Text);
+                MessageBox.Show("Default time is set to " + textBox1.Text);
+            }
+            catch (Exception ex)
+            {
+                //if timer value is invalid, show to user
+                MessageBox.Show("Time entered is invalid. Please enter a whole number in seconds. Reverting back to default time of 60 seconds.");
+                textBox1.Text = "60";
+                Form1.defaultTime = Convert.ToInt32(textBox1.Text);
+            }
         }
     }
 }

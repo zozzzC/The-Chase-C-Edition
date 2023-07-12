@@ -46,7 +46,8 @@
             lblDisplayQ = new Label();
             lblDisplayA = new Label();
             btnTimeStart = new Button();
-            label1 = new Label();
+            button1 = new Button();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -62,49 +63,53 @@
             // 
             // lblStudents
             // 
-            lblStudents.AutoSize = true;
             lblStudents.BackColor = Color.FromArgb(207, 63, 63);
             lblStudents.ForeColor = Color.FromArgb(255, 224, 92);
-            lblStudents.Location = new Point(130, 356);
+            lblStudents.Location = new Point(36, 356);
             lblStudents.Name = "lblStudents";
-            lblStudents.Size = new Size(62, 15);
+            lblStudents.Size = new Size(458, 64);
             lblStudents.TabIndex = 1;
             lblStudents.Text = "STUDENTS";
+            lblStudents.TextAlign = ContentAlignment.TopCenter;
             lblStudents.Click += lblStudents_Click;
             // 
             // lblTeachers
             // 
-            lblTeachers.AutoSize = true;
             lblTeachers.BackColor = Color.FromArgb(207, 63, 63);
             lblTeachers.ForeColor = Color.FromArgb(255, 224, 92);
-            lblTeachers.Location = new Point(962, 356);
+            lblTeachers.Location = new Point(868, 356);
             lblTeachers.Name = "lblTeachers";
-            lblTeachers.Size = new Size(63, 15);
+            lblTeachers.Size = new Size(453, 64);
             lblTeachers.TabIndex = 2;
             lblTeachers.Text = "TEACHERS";
+            lblTeachers.TextAlign = ContentAlignment.TopCenter;
             lblTeachers.Click += lblTeachers_Click;
             // 
             // lblTPts
             // 
-            lblTPts.AutoSize = true;
             lblTPts.BackColor = Color.FromArgb(207, 63, 63);
             lblTPts.ForeColor = Color.FromArgb(255, 224, 92);
-            lblTPts.Location = new Point(962, 448);
+            lblTPts.Location = new Point(868, 448);
             lblTPts.Name = "lblTPts";
-            lblTPts.Size = new Size(63, 15);
+            lblTPts.Size = new Size(453, 55);
             lblTPts.TabIndex = 4;
-            lblTPts.Text = "TEACHERS";
+            lblTPts.Text = "0";
+            lblTPts.TextAlign = ContentAlignment.TopCenter;
             // 
             // lblSPts
             // 
-            lblSPts.AutoSize = true;
             lblSPts.BackColor = Color.FromArgb(207, 63, 63);
             lblSPts.ForeColor = Color.FromArgb(255, 224, 92);
-            lblSPts.Location = new Point(130, 448);
+            lblSPts.Location = new Point(36, 448);
             lblSPts.Name = "lblSPts";
-            lblSPts.Size = new Size(62, 15);
+            lblSPts.Size = new Size(458, 55);
             lblSPts.TabIndex = 3;
-            lblSPts.Text = "STUDENTS";
+            lblSPts.Text = "0";
+            lblSPts.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // countdowntime
+            // 
+            countdowntime.Tick += countdowntime_Tick;
             // 
             // lblTimer
             // 
@@ -144,7 +149,7 @@
             // 
             // txtBoxTimer
             // 
-            txtBoxTimer.Location = new Point(606, 440);
+            txtBoxTimer.Location = new Point(603, 310);
             txtBoxTimer.Name = "txtBoxTimer";
             txtBoxTimer.Size = new Size(100, 23);
             txtBoxTimer.TabIndex = 41;
@@ -154,7 +159,7 @@
             lblTimeCount.BackColor = Color.FromArgb(207, 63, 63);
             lblTimeCount.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
             lblTimeCount.ForeColor = Color.FromArgb(255, 224, 92);
-            lblTimeCount.Location = new Point(569, 289);
+            lblTimeCount.Location = new Point(575, 289);
             lblTimeCount.Name = "lblTimeCount";
             lblTimeCount.Size = new Size(167, 59);
             lblTimeCount.TabIndex = 42;
@@ -177,10 +182,10 @@
             btnNextQ.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnNextQ.Location = new Point(1246, 740);
             btnNextQ.Name = "btnNextQ";
-            btnNextQ.RightToLeft = RightToLeft.Yes;
+            btnNextQ.RightToLeft = RightToLeft.No;
             btnNextQ.Size = new Size(75, 31);
             btnNextQ.TabIndex = 44;
-            btnNextQ.Text = "-";
+            btnNextQ.Text = "-->";
             btnNextQ.UseVisualStyleBackColor = true;
             btnNextQ.Click += btnNextQ_Click;
             // 
@@ -189,10 +194,10 @@
             btnPrevQ.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnPrevQ.Location = new Point(1147, 740);
             btnPrevQ.Name = "btnPrevQ";
-            btnPrevQ.RightToLeft = RightToLeft.Yes;
+            btnPrevQ.RightToLeft = RightToLeft.No;
             btnPrevQ.Size = new Size(75, 31);
             btnPrevQ.TabIndex = 45;
-            btnPrevQ.Text = "-";
+            btnPrevQ.Text = "<--";
             btnPrevQ.UseVisualStyleBackColor = true;
             btnPrevQ.Click += btnPrevQ_Click;
             // 
@@ -205,7 +210,7 @@
             lblDisplayQ.Name = "lblDisplayQ";
             lblDisplayQ.Size = new Size(1288, 59);
             lblDisplayQ.TabIndex = 46;
-            lblDisplayQ.Text = "0";
+            lblDisplayQ.Text = "Question";
             lblDisplayQ.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblDisplayA
@@ -217,36 +222,50 @@
             lblDisplayA.Name = "lblDisplayA";
             lblDisplayA.Size = new Size(1288, 59);
             lblDisplayA.TabIndex = 47;
-            lblDisplayA.Text = "0";
+            lblDisplayA.Text = "Answer";
             lblDisplayA.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnTimeStart
             // 
             btnTimeStart.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnTimeStart.Location = new Point(1246, 657);
+            btnTimeStart.Location = new Point(1246, 648);
             btnTimeStart.Name = "btnTimeStart";
             btnTimeStart.Size = new Size(75, 31);
             btnTimeStart.TabIndex = 48;
-            btnTimeStart.Text = "+";
+            btnTimeStart.Text = "Start";
             btnTimeStart.UseVisualStyleBackColor = true;
+            btnTimeStart.Click += btnTimeStart_Click;
             // 
-            // label1
+            // button1
             // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.FromArgb(207, 63, 63);
-            label1.ForeColor = Color.FromArgb(255, 224, 92);
-            label1.Location = new Point(193, 756);
-            label1.Name = "label1";
-            label1.Size = new Size(63, 15);
-            label1.TabIndex = 49;
-            label1.Text = "TEACHERS";
+            button1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.Location = new Point(1147, 648);
+            button1.Name = "button1";
+            button1.RightToLeft = RightToLeft.Yes;
+            button1.Size = new Size(75, 31);
+            button1.TabIndex = 49;
+            button1.Text = "Pause";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // button2
+            // 
+            button2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button2.Location = new Point(1051, 648);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 31);
+            button2.TabIndex = 50;
+            button2.Text = "End";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1346, 825);
-            Controls.Add(label1);
+            Controls.Add(button2);
+            Controls.Add(button1);
             Controls.Add(btnTimeStart);
             Controls.Add(lblDisplayA);
             Controls.Add(lblDisplayQ);
@@ -290,6 +309,7 @@
         private Label lblDisplayQ;
         private Label lblDisplayA;
         private Button btnTimeStart;
-        private Label label1;
+        private Button button1;
+        private Button button2;
     }
 }

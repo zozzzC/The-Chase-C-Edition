@@ -60,4 +60,28 @@
   <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="label4.Text" xml:space="preserve">
+    <value>How to Change Time: 
+1. Click on the 'Time' text in the 'The Chase' form (the red form.)
+2. A textbox will pop up, right on top of the timer. Enter the time in seconds there.
+3. Click 'Time' text again to confirm the time. The timer should then change. When you click 'start' the timer will begin.
+How to Change:
+
+How to Add Questions:
+1. Right now I can only support CSV files. If you go on Google Sheets or MS Excel then you can see what this looks like. The format of this should be something like:
+|column 1 | column 2 |
+|question | answer|
+2. Just export as CSV and download, then click CSV upload button above to upload the questions.
+3. As of now I don't have support for image-type questions. So all questions must just be typed. I'll try to get image support one day but it might take a while. 
+
+How to Show Questions and Answers:
+1. Use the --&gt; and &lt;-- buttons to move from question to answer and navigate.
+
+How to Add Points:
+1. Click on the 'Students' or 'Teachers' text in the main form (the red form.) 
+2. Use the + and - buttons to add or remove a point.
+
+I haven't done the theme music yet! And the design still needs some polishing.
+</value>
+  </data>
 </root>
