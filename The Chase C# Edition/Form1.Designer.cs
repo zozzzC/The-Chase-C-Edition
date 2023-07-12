@@ -42,6 +42,11 @@
             lblTimeCount = new Label();
             btnCSVUpload = new Button();
             btnNextQ = new Button();
+            btnPrevQ = new Button();
+            lblDisplayQ = new Label();
+            lblDisplayA = new Label();
+            btnTimeStart = new Button();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -117,7 +122,7 @@
             // button9
             // 
             button9.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button9.Location = new Point(140, 740);
+            button9.Location = new Point(1147, 694);
             button9.Name = "button9";
             button9.RightToLeft = RightToLeft.Yes;
             button9.Size = new Size(75, 31);
@@ -129,7 +134,7 @@
             // button8
             // 
             button8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            button8.Location = new Point(41, 740);
+            button8.Location = new Point(1246, 694);
             button8.Name = "button8";
             button8.Size = new Size(75, 31);
             button8.TabIndex = 38;
@@ -159,7 +164,7 @@
             // btnCSVUpload
             // 
             btnCSVUpload.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCSVUpload.Location = new Point(242, 740);
+            btnCSVUpload.Location = new Point(1246, 782);
             btnCSVUpload.Name = "btnCSVUpload";
             btnCSVUpload.Size = new Size(75, 31);
             btnCSVUpload.TabIndex = 43;
@@ -179,11 +184,73 @@
             btnNextQ.UseVisualStyleBackColor = true;
             btnNextQ.Click += btnNextQ_Click;
             // 
+            // btnPrevQ
+            // 
+            btnPrevQ.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnPrevQ.Location = new Point(1147, 740);
+            btnPrevQ.Name = "btnPrevQ";
+            btnPrevQ.RightToLeft = RightToLeft.Yes;
+            btnPrevQ.Size = new Size(75, 31);
+            btnPrevQ.TabIndex = 45;
+            btnPrevQ.Text = "-";
+            btnPrevQ.UseVisualStyleBackColor = true;
+            btnPrevQ.Click += btnPrevQ_Click;
+            // 
+            // lblDisplayQ
+            // 
+            lblDisplayQ.BackColor = Color.FromArgb(207, 63, 63);
+            lblDisplayQ.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            lblDisplayQ.ForeColor = Color.FromArgb(255, 224, 92);
+            lblDisplayQ.Location = new Point(33, 516);
+            lblDisplayQ.Name = "lblDisplayQ";
+            lblDisplayQ.Size = new Size(1288, 59);
+            lblDisplayQ.TabIndex = 46;
+            lblDisplayQ.Text = "0";
+            lblDisplayQ.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblDisplayA
+            // 
+            lblDisplayA.BackColor = Color.FromArgb(207, 63, 63);
+            lblDisplayA.Font = new Font("Segoe UI", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            lblDisplayA.ForeColor = Color.FromArgb(255, 224, 92);
+            lblDisplayA.Location = new Point(33, 575);
+            lblDisplayA.Name = "lblDisplayA";
+            lblDisplayA.Size = new Size(1288, 59);
+            lblDisplayA.TabIndex = 47;
+            lblDisplayA.Text = "0";
+            lblDisplayA.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // btnTimeStart
+            // 
+            btnTimeStart.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnTimeStart.Location = new Point(1246, 657);
+            btnTimeStart.Name = "btnTimeStart";
+            btnTimeStart.Size = new Size(75, 31);
+            btnTimeStart.TabIndex = 48;
+            btnTimeStart.Text = "+";
+            btnTimeStart.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.FromArgb(207, 63, 63);
+            label1.ForeColor = Color.FromArgb(255, 224, 92);
+            label1.Location = new Point(193, 756);
+            label1.Name = "label1";
+            label1.Size = new Size(63, 15);
+            label1.TabIndex = 49;
+            label1.Text = "TEACHERS";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1346, 825);
+            Controls.Add(label1);
+            Controls.Add(btnTimeStart);
+            Controls.Add(lblDisplayA);
+            Controls.Add(lblDisplayQ);
+            Controls.Add(btnPrevQ);
             Controls.Add(btnNextQ);
             Controls.Add(btnCSVUpload);
             Controls.Add(lblTimeCount);
@@ -219,5 +286,10 @@
         private Label lblTimeCount;
         private Button btnCSVUpload;
         private Button btnNextQ;
+        private Button btnPrevQ;
+        private Label lblDisplayQ;
+        private Label lblDisplayA;
+        private Button btnTimeStart;
+        private Label label1;
     }
 }

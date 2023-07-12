@@ -79,3 +79,11 @@ namespace The_Chase_C__Edition
                 }
             }
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            //as name suggests, if the 'plus' button is clicked AFTER a question is shown then we move onto the next question automatically. by default this is set to FALSE!
+
+        }
+    }
+}

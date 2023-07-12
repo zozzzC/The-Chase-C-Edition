@@ -46,6 +46,7 @@
             label1 = new Label();
             button8 = new Button();
             openFileDialog1 = new OpenFileDialog();
+            checkBox1 = new CheckBox();
             SuspendLayout();
             // 
             // label6
@@ -219,11 +220,23 @@
             // 
             openFileDialog1.FileName = "openFileDialog1";
             // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(12, 374);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(254, 19);
+            checkBox1.TabIndex = 43;
+            checkBox1.Text = "Auto-next question if plus button is clicked";
+            checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(866, 581);
+            Controls.Add(checkBox1);
             Controls.Add(button8);
             Controls.Add(label6);
             Controls.Add(comboBox2);
@@ -266,5 +279,6 @@
         private Label label1;
         private Button button8;
         private OpenFileDialog openFileDialog1;
+        private CheckBox checkBox1;
     }
 }
