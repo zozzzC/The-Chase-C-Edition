@@ -71,12 +71,39 @@ namespace The_Chase_C__Edition.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream ChasingMusic {
+            get {
+                return ResourceManager.GetStream("ChasingMusic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap THE_CHASE {
             get {
                 object obj = ResourceManager.GetObject("THE CHASE", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream TheChase {
+            get {
+                return ResourceManager.GetStream("TheChase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream TheChaseIsOnTheme {
+            get {
+                return ResourceManager.GetStream("TheChaseIsOnTheme", resourceCulture);
             }
         }
     }

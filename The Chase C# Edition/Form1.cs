@@ -4,6 +4,7 @@ using System.Media;
 using System.Net.Http.Headers;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
+using WMPLib;
 
 namespace The_Chase_C__Edition
 {
@@ -23,13 +24,15 @@ namespace The_Chase_C__Edition
         public static int defaultTime = 60;
         public static Boolean csvImported = false; //makes sure csv is imported before beginning 
 
+        public SoundPlayer chasingMusic = new SoundPlayer(Properties.Resources.ChasingMusic); //2 min music for the chase!
+
         Boolean studentPtSelect = true;
         PrivateFontCollection font = new PrivateFontCollection();
         public Form1()
         {
 
             InitializeComponent();
-
+            player.URL = Properties.Resources.ChasingMusic.ToString();
 
         }
 
@@ -286,6 +289,13 @@ namespace The_Chase_C__Edition
                         countdowntime.Interval = 1000;
                         countdowntime.Start();
                         timeLeft = time;
+                        try
+                        {
+                            chasingMusic.Play();
+                        } catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
                     }
                     else
                     {
@@ -328,6 +338,7 @@ namespace The_Chase_C__Edition
                 countdowntime.Stop();
                 SystemSounds.Exclamation.Play();
                 MessageBox.Show("Time's up!");
+
                 timeUp = true;
                 time = 0;
                 btnTimeStart.Enabled = true;
@@ -351,6 +362,7 @@ namespace The_Chase_C__Edition
             {
                 button1.Text = "Cont";
                 countdowntime.Stop();
+                //pause the musicccccc
                 timeIsPaused = true;
                 timeUp = false;
             }

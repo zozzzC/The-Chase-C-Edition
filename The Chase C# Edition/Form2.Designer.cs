@@ -80,6 +80,7 @@
             button2.TabIndex = 25;
             button2.Text = "Play";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -90,6 +91,7 @@
             button1.TabIndex = 24;
             button1.Text = "Play";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // label3
             // 

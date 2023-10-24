@@ -7,15 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using The_Chase_C__Edition.Properties;
+using System.Media;
 
 namespace The_Chase_C__Edition
 {
     public partial class Form2 : Form
     {
+        public WMPLib.WindowsMediaPlayer wplayer = new WMPLib.WindowsMediaPlayer();
 
         public Form2()
         {
             InitializeComponent();
+            wplayer.URL = Resources.TheChase.ToString();
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -80,6 +84,33 @@ namespace The_Chase_C__Edition
                 MessageBox.Show("Time entered is invalid. Please enter a whole number in seconds. Reverting back to default time of 60 seconds.");
                 textBox1.Text = "60";
                 Form1.defaultTime = Convert.ToInt32(textBox1.Text);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SoundPlayer snd = new SoundPlayer(Properties.Resources.TheChase);
+                snd.Play();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SoundPlayer snd = new SoundPlayer(Properties.Resources.TheChaseIsOnTheme);
+                snd.Play();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

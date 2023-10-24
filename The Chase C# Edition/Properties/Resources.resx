@@ -124,4 +124,13 @@
   <data name="Agrandir_TextBold" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Agrandir-TextBold.otf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="ChasingMusic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ChasingMusic.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TheChase" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TheChase.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TheChaseIsOnTheme" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TheChaseIsOnTheme.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>
