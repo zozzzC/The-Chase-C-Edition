@@ -7,7 +7,7 @@ Play 'The Chase' during school assemblies.
 - [x] CSV file import for questions.
 - [x] Timer and points for both teachers and students.
 - [ ] Image in CSV file support.
-- [ ] 'Dun dun dun!!!' theme!
+- [x] 'Dun dun dun!!!' theme!
 ---
 # Usage
 
