@@ -23,8 +23,7 @@ namespace The_Chase_C__Edition
         public static List<(string, string)> listOfAll = new List<(string, string)>();
         public static int defaultTime = 60;
         public static Boolean csvImported = false; //makes sure csv is imported before beginning 
-
-        public SoundPlayer chasingMusic = new SoundPlayer(Properties.Resources.ChasingMusic); //2 min music for the chase!
+        public SoundPlayer chasingMusic = new SoundPlayer(Properties.Resources.ChasingMusic);
 
         Boolean studentPtSelect = true;
         PrivateFontCollection font = new PrivateFontCollection();
@@ -32,28 +31,35 @@ namespace The_Chase_C__Edition
         {
 
             InitializeComponent();
-            player.URL = Properties.Resources.ChasingMusic.ToString();
 
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             int countFrom = 60;
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
 
-            font.AddFontFile("C:\\Users\\Chloe\\Downloads\\Agrandir-Font-Family\\Agrandir - Free For Personal Use\\Agrandir-TextBold.otf");
-
-            //loop to change all fonts to custom one
-
-            foreach (Label lb in this.Controls.OfType<Label>())
+            try
             {
-                lb.Font = new Font(font.Families[0], 30);
+                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                font.AddFontFile("C:\\Users\\Chloe\\Downloads\\Agrandir-Font-Family\\Agrandir - Free For Personal Use\\Agrandir-TextBold.otf");
+
+                //loop to change all fonts to custom one
+
+                foreach (Label lb in this.Controls.OfType<Label>())
+                {
+                    lb.Font = new Font(font.Families[0], 30);
+                }
+
+                lblDisplayA.Font = new Font(font.Families[0], 20);
+                lblDisplayQ.Font = new Font(font.Families[0], 20);
+
+                txtBoxTimer.Visible = false;
+            } catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
-
-            lblDisplayA.Font = new Font(font.Families[0], 20);
-            lblDisplayQ.Font = new Font(font.Families[0], 20);
-
-            txtBoxTimer.Visible = false;
+            
         }
 
         private void lblTimer_Click(object sender, EventArgs e)
@@ -375,6 +381,7 @@ namespace The_Chase_C__Edition
             //stop time and reset all time
             if (timeUp == false) // means the time hasn't ended yet so we can still use the button
             {
+                chasingMusic.Stop();
                 btnTimeStart.Enabled = true;
                 timeUp = true;
                 countdowntime.Stop();
