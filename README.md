@@ -40,7 +40,7 @@ How to Add Questions:
 1. Right now I can only support CSV files. If you go on Google Sheets or MS Excel then you can see what this looks like. The format of this should be something like:
 |column 1 | column 2 |
 |question | answer|
-2. Just export as CSV and download, then click CSV upload button above to upload the questions.
+2. Just export as CSV and download, then click CSV upload button above to upload the questions. **IMAGES ARE NOT SUPPORTED!**
 3. As of now I don't have support for image-type questions. So all questions must just be typed. I'll try to get image support one day but it might take a while. 
 
 How to Show Questions and Answers:
