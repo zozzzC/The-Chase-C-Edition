@@ -1,13 +1,12 @@
 # The-Chase-C-Edition
 ---
-Play 'The Chase' during school assemblies. 
+Play 'The Chase' during school assemblies.
 
 ---
-# To Do: 
-- [x] CSV file import for questions.
-- [x] Timer and points for both teachers and students.
-- [ ] Image in CSV file support.
-- [x] 'Dun dun dun!!!' theme!
+# Features: 
+- CSV file import for questions.
+- Timer and points for both teachers and students.
+- 'Dun dun dun!!!' themes!
 ---
 # Usage
 
@@ -27,7 +26,7 @@ Then you should find an application .EXE file:
 
 Double click this to run the program.
 
-Note: This ony works on Windows machines.
+Note: This ony works on Windows machines. Please TRY running the .exe file! Not all machines support it. 
 
 ---
 # Form Use
@@ -50,5 +49,3 @@ How to Show Questions and Answers:
 How to Add Points:
 1. Click on the 'Students' or 'Teachers' text in the main form (the red form.) 
 2. Use the + and - buttons to add or remove a point.
-
-I haven't done the theme music yet! And the design still needs some polishing.
