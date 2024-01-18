@@ -1,6 +1,6 @@
 # The-Chase-C-Edition
 ---
-Play 'The Chase' during school assemblies.
+Play 'The Chase' during school assemblies. 
 
 ---
 # Features: 
@@ -16,7 +16,7 @@ Download the file by clicking the green 'code' button. Unzip the file, and then 
 The Chase C# Edition\The Chase C# Edition\bin\Debug\net6.0-windows
 ```
 
-If you cannot find the .EXE file, you may need to compile and run the source manually from Visual Studio, because I haven't had a way to include the bin files in the file upload.
+**If you cannot find the .EXE file, you may need to compile and run the source manually from Visual Studio. I will try to include the .exe file at some point.**
 
 Then you should find an application .EXE file:
 
